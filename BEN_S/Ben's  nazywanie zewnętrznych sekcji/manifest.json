@@ -1,0 +1,17 @@
+{
+  "name": "Ben's | nazywanie zewnętrznych sekcji",
+  "id": "1416370621455283946",
+  "api": "1.0.0",
+  "main": "code.js",
+  "capabilities": [],
+  "enableProposedApi": false,
+  "documentAccess": "dynamic-page",
+  "editorType": [
+    "figma"
+  ],
+  "networkAccess": {
+    "allowedDomains": [
+      "none"
+    ]
+  }
+}

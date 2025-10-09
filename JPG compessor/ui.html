@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Eksport JPG z kompresją</h2>
+    <button id="export">Eksportuj</button>
+    <button id="cancel">Anuluj</button>
+
+    <script>
+      // Obsługa kliknięć przycisków
+      document.getElementById('export').onclick = () => {
+        parent.postMessage({ pluginMessage: { type: 'export' } }, '*');
+      };
+
+      document.getElementById('cancel').onclick = () => {
+        parent.postMessage({ pluginMessage: { type: 'cancel' } }, '*');
+      };
+
+      // Nasłuchiwanie na wiadomości z pluginu
+      window.onmessage = async (event) => {
+        const { type, data } = event.data.pluginMessage;
+        if (type === 'save-image') {
+          const blob = new Blob([data], { type: 'image/jpeg' });
+          const url = URL.createObjectURL(blob);
+
+          // Tworzenie elementu <a> do pobierania obrazu
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'compressed_image.jpg';
+          a.click();
+        }
+      };
+    </script>
+  </body>
+</html>

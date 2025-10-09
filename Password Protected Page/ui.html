@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Blokada strony</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    input {
+      margin: 10px 0;
+      padding: 8px;
+      width: 80%;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h3>Podaj hasło, aby uzyskać dostęp</h3>
+  <input type="password" id="password" placeholder="Hasło">
+  <button id="check-password">Sprawdź hasło</button>
+  <br><br>
+  <h3>Ustaw nowe hasło</h3>
+  <input type="password" id="new-password" placeholder="Nowe hasło">
+  <button id="set-password">Ustaw nowe hasło</button>
+
+  <script>
+    const passwordInput = document.getElementById('password');
+    const newPasswordInput = document.getElementById('new-password');
+    const checkPasswordButton = document.getElementById('check-password');
+    const setPasswordButton = document.getElementById('set-password');
+    
+    // Sprawdzanie hasła
+    checkPasswordButton.onclick = () => {
+      const password = passwordInput.value;
+      parent.postMessage({ pluginMessage: { type: 'CHECK_PASSWORD', password } }, '*');
+    };
+
+    // Ustawianie nowego hasła
+    setPasswordButton.onclick = () => {
+      const newPassword = newPasswordInput.value;
+      parent.postMessage({ pluginMessage: { type: 'SET_PASSWORD', password: newPassword } }, '*');
+    };
+
+    window.onmessage = (event) => {
+      if (event.data.pluginMessage.type === 'PASSWORD_CHECK') {
+        const savedPassword = event.data.pluginMessage.savedPassword;
+        if (!savedPassword) {
+          alert('Hasło nie jest ustawione. Ustaw nowe hasło.');
+        }
+      }
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 16px;
+        width: 300px;
+        box-sizing: border-box;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 16px;
+      }
+      label {
+        display: block;
+        margin-bottom: 12px;
+      }
+      input {
+        width: 50px;
+        padding: 6px;
+        font-size: 16px;
+        margin-left: 10px;
+      }
+      button {
+        margin-top: 16px;
+        padding: 10px;
+        width: 100%;
+        font-weight: bold;
+        background: #18A0FB;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <?xml version="1.0" encoding="UTF-8"?>
+    
+<div style="display: flex; justify-content: center; margin-bottom: 12px;">
+  <svg viewBox="0 0 308 308" style="width: 60px; height: 80;" xmlns="http://www.w3.org/2000/svg">
+    <style>
+      .cls-1 { fill: #000; }
+    </style>
+    <g>
+      <polygon class="cls-1" points="242 0 198 0 154 44 110 0 66 0 154 88 242 0"/>
+      <polygon class="cls-1" points="66 308 110 308 154 264 198 308 242 308 154 220 66 308"/>
+      <polygon class="cls-1" points="286 0 154 132 22 0 0 0 0 22 132 154 0 286 0 308 22 308 154 176 286 308 308 308 308 286 176 154 308 22 308 0 286 0"/>
+      <polygon class="cls-1" points="0 66 0 110 44 154 0 198 0 242 88 154 0 66"/>
+      <polygon class="cls-1" points="308 242 308 198 264 154 308 110 308 66 220 154 308 242"/>
+    </g>
+  </svg>
+</div>
+
+
+    <label>
+      Financial Year:
+      <input type="text" id="fyInput" maxlength="2" value="25" />
+    </label>
+
+    <button id="submitBtn">Apply Naming</button>
+
+    <script>
+      document.getElementById('submitBtn').onclick = () => {
+        const fy = document.getElementById('fyInput').value.trim();
+        parent.postMessage(
+          {
+            pluginMessage: {
+              type: 'rename-assets',
+              fy: fy
+            }
+          },
+          '*'
+        );
+      };
+    </script>
+  </body>
+</html>

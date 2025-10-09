@@ -1,0 +1,17 @@
+{
+  "name": "Ben's | A+ | basics | single assets names",
+  "id": "1416363954383453920",
+  "api": "1.0.0",
+  "main": "code.js",
+  "capabilities": [],
+  "enableProposedApi": false,
+  "documentAccess": "dynamic-page",
+  "editorType": [
+    "figma"
+  ],
+  "networkAccess": {
+    "allowedDomains": [
+      "none"
+    ]
+  }
+}
