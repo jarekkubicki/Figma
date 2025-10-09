@@ -1,0 +1,8 @@
+{
+  "name": "Ben's | Universal Renamer ver 1.0",
+  "id": "1557664451679707306",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "ui.html",
+  "editorType": ["figma"]
+}

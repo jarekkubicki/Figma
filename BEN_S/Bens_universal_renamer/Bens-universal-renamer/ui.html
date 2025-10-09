@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        font-family: Inter, sans-serif;
+        margin: 16px;
+      }
+      select, button {
+        width: 100%;
+        padding: 8px;
+        margin-top: 8px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+      }
+      label {
+        font-size: 13px;
+        font-weight: 600;
+      }
+      button {
+        background: #18a0fb;
+        color: white;
+        border: none;
+        margin-top: 16px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #0f7ae5;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>GTIN Renamer</h3>
+    <label for="mode">System nazewnictwa</label>
+    <select id="mode">
+      <option value="PT">Secondary images PT (GTIN_PT01...)</option>
+      <option value="MODULE">A+ Modules (GTIN_module_1...)</option>
+    </select>
+
+    <label for="direction">Kierunek</label>
+    <select id="direction">
+      <option value="horizontal">Z lewej do prawej</option>
+      <option value="vertical">Z góry na dół</option>
+    </select>
+
+    <button id="apply">Rename</button>
+
+    <script>
+      document.getElementById("apply").onclick = () => {
+        const mode = document.getElementById("mode").value;
+        const direction = document.getElementById("direction").value;
+        parent.postMessage(
+          { pluginMessage: { type: "rename", mode, direction } },
+          "*"
+        );
+      };
+    </script>
+  </body>
+</html>
