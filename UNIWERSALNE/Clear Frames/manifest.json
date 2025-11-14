@@ -1,0 +1,13 @@
+{
+  "name": "Clear Frames",
+  "id": "clear-frames-plugin",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": ["figma"],
+  "menu": [
+    {
+      "name": "Clear All Children from Frames",
+      "command": "clear-frames"
+    }
+  ]
+}

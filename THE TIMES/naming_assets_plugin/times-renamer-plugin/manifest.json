@@ -1,0 +1,14 @@
+{
+  "name": "The Times | Naming Assets",
+  "id": "times-naming-assets-plugin",
+  "main": "code.js",
+  "ui": "ui.html",
+  "api": "1.0.0",
+  "editorType": ["figma"],
+  "menu": [
+    {
+      "name": "Start renaming",
+      "command": "rename"
+    }
+  ]
+}

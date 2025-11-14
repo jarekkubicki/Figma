@@ -1,8 +1,0 @@
-{
-  "name": "Password Protected Page",
-  "id": "password-protected-page",
-  "editorType": ["figma"],
-  "main": "code.js",
-  "ui": "ui.html",
-  "api": "1.0.0"
-}

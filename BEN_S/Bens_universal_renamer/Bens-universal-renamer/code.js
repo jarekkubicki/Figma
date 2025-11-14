@@ -1,5 +1,3 @@
-// figma.showUI(__html__, { width: 360, height: 240 });
-
 figma.ui.onmessage = (msg) => {
   if (msg.type === "rename") {
     const { mode, direction } = msg;
@@ -26,7 +24,7 @@ figma.ui.onmessage = (msg) => {
           children.sort((a, b) => a.y - b.y);
         }
 
-        // logika sufiksu
+        // nadawanie nazw
         children.forEach((child, index) => {
           const prefix = section.name.trim();
           const number = index + 1;
@@ -37,7 +35,10 @@ figma.ui.onmessage = (msg) => {
               name = `${prefix}_PT${String(number).padStart(2, "0")}`;
               break;
             case "MODULE":
-              name = `${prefix}_module_${number}`;
+              name = `${prefix}_NEWmodule_${number}`;
+              break;
+            case "SEQUENTIAL":
+              name = `${prefix}_${String(number).padStart(2, "0")}`;
               break;
           }
 
