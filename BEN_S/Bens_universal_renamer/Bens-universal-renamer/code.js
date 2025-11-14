@@ -35,7 +35,7 @@ figma.ui.onmessage = (msg) => {
               name = `${prefix}_PT${String(number).padStart(2, "0")}`;
               break;
             case "MODULE":
-              name = `${prefix}_module_${number}`;
+              name = `${prefix}_NEW_module_${number}`;
               break;
             case "SEQUENTIAL":
               name = `${prefix}_${String(number).padStart(2, "0")}`;
