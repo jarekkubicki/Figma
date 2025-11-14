@@ -1,7 +1,10 @@
 async function loadPlugin() {
   try {
     // 1. Pobierz i załaduj UI
-    const uiRes = await fetch("https://raw.githubusercontent.com/jarekkubicki/Figma/refs/heads/main/BEN_S/Bens_universal_renamer/Bens-universal-renamer/ui.html");
+    const uiRes = await fetch(
+    `https://raw.githubusercontent.com/jarekkubicki/Figma/refs/heads/main/BEN_S/Bens_universal_renamer/Bens-universal-renamer/ui.html?v=${Date.now()}`
+    );
+
     const html = await uiRes.text();
     figma.showUI(html, { width: 360, height: 320 });
 
