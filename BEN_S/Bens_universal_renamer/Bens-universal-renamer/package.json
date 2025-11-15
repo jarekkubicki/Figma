@@ -1,9 +1,0 @@
-{
-  "name": "figma-plugin-rename",
-  "version": "1.0.0",
-  "description": "Figma plugin to rename objects based on section hierarchy.",
-  "main": "code_v2.js",
-  "scripts": {},
-  "author": "",
-  "license": "MIT"
-}
